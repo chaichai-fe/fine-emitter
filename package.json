@@ -1,0 +1,31 @@
+{
+  "name": "fei-emitter",
+  "private": false,
+  "version": "0.0.3",
+  "main": "./dist/fei-emitter.cjs",
+  "type": "module",
+  "module": "./dist/fei-emitter.js",
+  "unpkg": "/dist/fei-emitter.iife.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "emitter",
+    "pubsub",
+    "event-bus"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.5.4",
+    "vitest": "^0.34.5"
+  }
+}
