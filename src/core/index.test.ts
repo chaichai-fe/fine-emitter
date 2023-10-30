@@ -11,33 +11,33 @@ const emitter = createEmitter<Event>()
 
 describe('createEmitter', () => {
   test('on() and emit()', () => {
-    const callback1 = vi.fn()
-    const callback2 = vi.fn()
+    const cb1 = vi.fn()
+    const cb2 = vi.fn()
 
-    emitter.on('bar', callback1)
-    emitter.on('foo', callback2)
+    emitter.on('bar', cb1)
+    emitter.on('foo', cb2)
 
     emitter.emit('bar', 'Hello')
-    expect(callback1).toHaveBeenCalledWith('Hello')
+    expect(cb1).toHaveBeenCalledWith('Hello')
 
     emitter.emit('foo', 123)
-    expect(callback2).toHaveBeenCalledWith(123)
+    expect(cb2).toHaveBeenCalledWith(123)
   })
 
   test('off()', () => {
-    const callback1 = vi.fn()
-    const callback2 = vi.fn()
+    const cb1 = vi.fn()
+    const cb2 = vi.fn()
 
-    emitter.on('bar', callback1)
-    emitter.on('foo', callback2)
+    emitter.on('bar', cb1)
+    emitter.on('foo', cb2)
 
-    emitter.off('bar', callback1)
+    emitter.off('bar', cb1)
 
     emitter.emit('bar', 'World')
-    expect(callback1).not.toHaveBeenCalled()
+    expect(cb1).not.toHaveBeenCalled()
 
     emitter.emit('foo', 456)
-    expect(callback2).toHaveBeenCalledWith(456)
+    expect(cb2).toHaveBeenCalledWith(456)
   })
 
   test('clear()', () => {

@@ -1,18 +1,19 @@
 type DefaultEvent = Record<string, unknown[]>
 
-type EventMap<T extends DefaultEvent> = {
+// 存储事件的对象类型
+type EventsMap<T extends DefaultEvent> = {
   [K in keyof T]: ((...args: T[K]) => void)[]
 }
 
-type Return<T extends DefaultEvent> = {
+type ReturnType<T extends DefaultEvent> = {
   on<K extends keyof T>(eventName: K, cb: (...args: T[K]) => void): void
   emit<K extends keyof T>(eventName: K, ...args: T[K]): void
   off<K extends keyof T>(eventName: K, handler: Function): void
   clear<K extends keyof T>(eventName: K): void
 }
 
-function createEmitter<T extends DefaultEvent>(): Return<T> {
-  const eventMap: EventMap<T> = {} as EventMap<T>
+function createEmitter<T extends DefaultEvent>(): ReturnType<T> {
+  const eventMap: EventsMap<T> = {} as EventsMap<T>
   return {
     on(eventName, cb) {
       if (!eventMap[eventName]) {
