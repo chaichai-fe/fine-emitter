@@ -2,7 +2,7 @@ import createEmitter from './core'
 
 type Event = {
   change: [id: number, age: number]
-  update: [value?: string]
+  update: [value?: number]
 }
 
 const emitter = createEmitter<Event>()
