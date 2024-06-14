@@ -13,8 +13,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/core/index.ts'), // 打包入口文件
-      name: 'FeiEmitter',
-      fileName: 'fei-emitter', // 生成的文件名称
+      name: 'FineEmitter',
+      fileName: 'fine-emitter', // 生成的文件名称
       formats: ['es', 'cjs', 'iife'],
     },
   },

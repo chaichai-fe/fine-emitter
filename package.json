@@ -1,11 +1,11 @@
 {
-  "name": "fei-emitter",
+  "name": "fine-emitter",
   "private": false,
   "version": "0.0.3",
-  "main": "./dist/fei-emitter.cjs",
+  "main": "./dist/fine-emitter.cjs",
   "type": "module",
-  "module": "./dist/fei-emitter.js",
-  "unpkg": "/dist/fei-emitter.iife.js",
+  "module": "./dist/fine-emitter.js",
+  "unpkg": "/dist/fine-emitter.iife.js",
   "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
